@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Okamoto Nicole Coding Assignment 11
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project sets up a development environment for a Create React App application, displaying a `<h1>` tag with the text "Codin 1". The application is hosted in a Docker container.
 
-## Available Scripts
+## Requirements
 
-In the project directory, you can run:
+- Docker
 
-### `npm start`
+## Instructions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Follow these steps to get the web application running on `localhost:7775` (127.0.0.1:7775):
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Step 1: Clone the Repository
 
-### `npm test`
+If you haven't already, clone the repository containing the project files:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone <repository_url>
+cd <repository_directory>
+```
 
-### `npm run build`
+### Step 2: Build the Docker Image
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Build the Docker image using the provided `Dockerfile`. Run this command from the root of your project directory (where the Dockerfile is located):
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+docker build -t okamoto_nicole_coding_assignment11 .
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Step 3: Run the Docker Container
 
-### `npm run eject`
+Run the Docker container using the following command:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+docker run -it --rm -p 7775:3000 --name okamoto_nicole_coding_assignment11 okamoto_nicole_coding_assignment11
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Step 4: Access the Web Application
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Open your web browser and navigate to `http://localhost:7775`. You should see the web application displaying a `<h1>` tag with the text "Codin 1".
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Notes
 
-## Learn More
+- The container maps port 3000 (default for Create React App) to port 7775 on your localhost, therefore on your browser navigatete to: `http://localhost:7775` 
+- The `--rm` flag ensures that the container is removed after you stop it.
+- The `-it` flag allows you to interact with the container (useful for debugging).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Troubleshooting
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- If the container fails to start, ensure you have Docker installed and running on your machine.
+- Check for any errors in the terminal output and address them accordingly.
+```

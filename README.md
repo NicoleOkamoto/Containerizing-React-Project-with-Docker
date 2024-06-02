@@ -19,6 +19,11 @@ git clone <repository_url>
 cd <repository_directory>
 ```
 
+To find the repository_url On GitHub: 
+1. Click on the green "Code" button.
+2. Copy the HTTPS or SSH URL from the dropdown.
+3. Replace on the ```bash
+
 ### Step 2: Build the Docker Image
 
 Build the Docker image using the provided `Dockerfile`. Run this command from the root of your project directory (where the Dockerfile is located):

@@ -1,4 +1,4 @@
-# Okamoto Nicole Coding Assignment 11
+# Praticing setting up React Project in a Docker Container
 
 This project sets up a development environment for a Create React App application, displaying a `<h1>` tag with the text "Codin 1". The application is hosted in a Docker container.
 
